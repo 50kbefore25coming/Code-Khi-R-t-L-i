@@ -1,4 +1,3 @@
-import math
+a = int(input())
 
-n = int(input())
-for _ in range(n):
+print(format(a,","))
