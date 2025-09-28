@@ -1,18 +1,15 @@
 def so(s):
     ok = True
-    if s != s[::-1]:
+    if len(s) % 2 != 0 or s != s[::-1]:
         ok = False
-    for i in range(0, len(s)):
-        if int(s[i]) % 2 != 0:
+    for i in s:
+        if int(i) % 2 != 0:
             ok = False
-    if len(s) % 2 != 0:
-        ok = False
     return ok
 
-t = int(input())
-for _ in range(t):
+for t in range(int(input())):
     s = int(input())
-    for i in range(22, s):
+    for i in range(22, s, 2):
         if so(str(i)):
             print(i, end=" ")
-    print("") 
+    print("")
