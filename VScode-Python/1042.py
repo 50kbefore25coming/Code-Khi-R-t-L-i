@@ -8,4 +8,4 @@ for _ in range(t):
             ok = False
             break
         i += 1
-    print("YES" if ok else "NO")
+    print("YES" if ok else "NO") 
