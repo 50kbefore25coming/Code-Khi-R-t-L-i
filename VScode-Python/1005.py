@@ -8,7 +8,7 @@ def check(a):
         return True
     else:
         return False
-    
+
 a = int(input())
 if check(a):
     print("YES")
