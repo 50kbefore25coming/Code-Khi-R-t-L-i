@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.*;
 
 public class j1010 {
@@ -5,16 +6,22 @@ public class j1010 {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while(t-- > 0){
+            int flag = 1;
             String a = sc.next();
-            String res = "0";
-            for(int i = 0; i < a.length(); i++){
-                if (a.charAt(i) == '0' || a.charAt(i) == '8' || a.charAt(i) == '9') {
-                    res.charAt(i) = 0;
-                    continue;
-                }
-                res.charAt(i) = a.charAt(i);
+            StringBuilder res = new StringBuilder();
+
+            for (char c : a.toCharArray()) {
+                if (c == '0' || c == '8' || c == '9') res.append('0');
+                else if (c == '1') res.append('1');
+                else { flag = 0; break; }
             }
-            System.out.println(res);
+            
+            if (flag == 0) {
+                System.out.println("INVALID");
+            }else {
+                String result = res.toString().replaceFirst("^0+", "");
+                System.out.println(result.isEmpty() ? "INVALID" : result);
+            }
         }
     }
 }
